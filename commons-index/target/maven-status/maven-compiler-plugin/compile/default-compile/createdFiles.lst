@@ -1,0 +1,6 @@
+com\commons\index\es\generic\GenericEsService.class
+com\commons\index\es\generic\GenericEsSupport.class
+com\commons\index\es\ElasticSearchCleanUp.class
+com\commons\index\es\ElasticSearchManager.class
+com\commons\index\es\ElasticSearchConfiguration.class
+com\commons\index\es\generic\GenericEsService$OperationType.class

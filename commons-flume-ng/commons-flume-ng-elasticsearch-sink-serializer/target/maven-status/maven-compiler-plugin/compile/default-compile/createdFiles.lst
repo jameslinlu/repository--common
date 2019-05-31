@@ -1,0 +1,5 @@
+com\commons\flume\sink\elasticsearch\utils\ParseUtil.class
+com\commons\flume\sink\elasticsearch\utils\JedisHelper.class
+com\commons\flume\sink\elasticsearch\CommonIndexNameBuilder.class
+com\commons\flume\sink\elasticsearch\utils\Reflections.class
+com\commons\flume\sink\elasticsearch\CommonElasticSearchIndexRequestBuilderFactory.class

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath*:/prop/cache.properties" ignore-unresolvable="true"/>
+
+    <bean id="commonCacheConfig" class="com.commons.cache.config.CommonCacheConfig">
+        <property name="mode" value="${redis.mode}"/>
+        <property name="host" value="${redis.host}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="master" value="${redis.master}"/>
+        <property name="sentinel" value="${redis.sentinel}"/>
+        <property name="timeout" value="${redis.timeout}"/>
+        <property name="database" value="${redis.database}"/>
+        <property name="password" value="${redis.password}"/>
+        <property name="maxTotal" value="${redis.pool.maxTotal}"/>
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+    </bean>
+
+    <bean id="cacheManager" class="com.commons.cache.manager.CommonRedissonCacheManager">
+        <constructor-arg ref="commonCacheConfig"/>
+    </bean>
+
+    <bean class="com.commons.cache.manager.CommonCacheManager">
+        <property name="defaultManager" ref="cacheManager"></property>
+        <!--<property name="managers">-->
+        <!--<map>-->
+        <!--<entry key="test" value-ref="cacheManager"/>-->
+        <!--</map>-->
+        <!--</property>-->
+    </bean>
+
+    <cache:annotation-driven mode="aspectj" proxy-target-class="true" cache-manager="cacheManager"/>
+
+    <bean class="com.commons.cache.util.CacheUtil"></bean>
+    <bean class="com.commons.cache.util.LockUtil"></bean>
+
+</beans>

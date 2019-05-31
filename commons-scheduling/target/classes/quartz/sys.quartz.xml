@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="false">
+    <!--
+    任何注解@Component的类（@Service @Controller等均实现了@Component）中的方法注解@Job
+    即可自动代理实现集群定时任务
+    -->
+    <bean class="com.commons.scheduling.quartz.QuartzSchedulerFactoryBean">
+        <property name="configLocation" value="classpath:quartz/quartz.properties"/>
+        <property name="overwriteExistingJobs" value="true"/>
+    </bean>
+</beans>

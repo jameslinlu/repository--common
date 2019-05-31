@@ -1,0 +1,9 @@
+com\commons\mq\client\impl\RabbitMQClient.class
+com\commons\mq\connect\factory\CommonMQClientFactory.class
+com\commons\mq\client\impl\RabbitMQClient$1.class
+com\commons\mq\client\MQClientManager.class
+com\commons\mq\utils\WebSocketMessageUtils.class
+com\commons\mq\client\impl\RabbitMQClient$ExchangeMode.class
+com\commons\mq\client\IMQClient.class
+com\commons\mq\connect\config\RabbitMQConfig.class
+com\commons\mq\connect\config\AbstractMQConfig.class

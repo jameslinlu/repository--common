@@ -1,0 +1,4 @@
+com\commons\flume\sink\http\HttpRequest.class
+com\commons\flume\sink\http\HttpSink.class
+com\commons\flume\sink\http\HttpRequestFactory.class
+com\commons\flume\sink\http\CommonHttpRequestFactory.class

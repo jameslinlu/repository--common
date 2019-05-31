@@ -1,0 +1,11 @@
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\dialect\Dialect.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\sqlsource\CustomerProviderSqlSource.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\utils\MybatisUtils.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\constant\Const.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\enums\MappingEnum.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\dialect\DialectFactory.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\sqlsource\CustomerDynamicSqlSource.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\utils\MetaObjectUtils.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\dialect\impl\MySqlDialect.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\interceptor\ExecutorQueryHandlerInterceptor.java
+C:\Users\admin\IdeaProjects\commons\commons-store\src\main\java\com\commons\store\orm\mybatis\utils\SqlParser.java

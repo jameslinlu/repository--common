@@ -1,0 +1,2 @@
+此工程用于扩展flume至elasticsearch解析传输,仅需实现IParse接口可支持提交数据至ElasticSearch
+已修改flume1.6源码的连接方式支持elasticsearch2.x - 使用官方jar则本工程无效

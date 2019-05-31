@@ -1,0 +1,12 @@
+com\commons\store\orm\mybatis\enums\MappingEnum.class
+com\commons\store\orm\mybatis\sqlsource\CustomerProviderSqlSource.class
+com\commons\store\orm\mybatis\utils\MetaObjectUtils.class
+com\commons\store\orm\mybatis\sqlsource\CustomerDynamicSqlSource.class
+com\commons\store\orm\mybatis\utils\MybatisUtils$1.class
+com\commons\store\orm\mybatis\constant\Const.class
+com\commons\store\orm\mybatis\dialect\impl\MySqlDialect.class
+com\commons\store\orm\mybatis\dialect\DialectFactory.class
+com\commons\store\orm\mybatis\interceptor\ExecutorQueryHandlerInterceptor.class
+com\commons\store\orm\mybatis\dialect\Dialect.class
+com\commons\store\orm\mybatis\utils\SqlParser.class
+com\commons\store\orm\mybatis\utils\MybatisUtils.class

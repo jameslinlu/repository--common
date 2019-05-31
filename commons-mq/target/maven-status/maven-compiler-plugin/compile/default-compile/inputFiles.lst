@@ -1,0 +1,7 @@
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\client\MQClientManager.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\client\impl\RabbitMQClient.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\connect\config\AbstractMQConfig.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\connect\config\RabbitMQConfig.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\connect\factory\CommonMQClientFactory.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\utils\WebSocketMessageUtils.java
+C:\Users\admin\IdeaProjects\commons\commons-mq\src\main\java\com\commons\mq\client\IMQClient.java

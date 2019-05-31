@@ -1,0 +1,78 @@
+commons
+    commons-cache
+        封装spring-data-redis Redis缓存结合Spring 支持事务等等原生特性
+        抽取INativeCache接口可自定义实现其他缓存
+        提供Hardcode操作缓存工具 CacheUtil.java
+        默认使用方式：
+            工程resources/cache目录下 cache.properties定义了redis连接参数
+            需要使用时Spring需加载 classpath*:/cache/sys.cache.xml 从jar中读取默认配置
+
+    commons-common
+        generic.model 提供 Controller方法约定好的返回对象ResponseMessage和ResponseErrorMessage
+        generic.service 提供 按IService实现的通用业务实现类 使用时继承即可
+        DataCoverter.java对前台日期复制做了转换 使用时在spring配置文件中 加载，参见cgpboss web工程配置
+        ContextHolder.java 对国际化消息 Request Response Session ServletRequestAttributes 和当前用户 做了简单的封装
+        utils包下提供了一些工具  如PropUtil 读取 resource/prop文件夹下 properties文件
+        tags 提供了 jstl和el 的扩展方法及分页模版
+
+    commons-metadata
+        package
+            code 定义了系统返回码  通用Service实现throw new ServiceException(ResultCode.ERROR_SAVE);
+                                 web层catch后返回 new ResponseErrorMessage(e) 会自动使用国际化配置
+                                 code对应的web描述在lang/system_message.properties
+                                 如需要其他语言则 lang/system_message_en.properties补充多个
+            exception 定义 默认系统异常 如无其他定义则使用此类
+            generic 定义 通用的Repository和Service接口
+            model 定义 相关依赖的实体类
+
+
+    commons-proxy
+        package
+            client 封装客户端代理时扫描类
+            server 封装服务端发布时扫描类
+
+            route,registry,domain 封装了使用zookeeper做注册中心时的 注册 读取 变更 路由策略 等等
+            服务注册，服务发现， 服务代理
+
+            ZookeepManager 全局通用 注入到  IProxyRegistry和IProxyDiscovery
+
+            IProxyRegistry 注册服务接口
+            	ZookeeperProxyRegistry  使用zk 注册服务 更新 IProxyRoute
+
+            	register(List<ServiceInfo> services) 服务注册到zk
+
+            IProxyDiscovery	服务发现接口
+
+            	ZookeeperProxyDiscovery 使用zk 获取监听注册服务 更新 IProxyRoute
+
+            	discovery();监听服务  更新 IProxyRoute
+
+            IProxyRoute 服务路由接口 维护当前路由信息
+
+            IProxyProvider 根据 IProxyRoute和 ILoadPolicy 包装后对外部提供信息
+
+            ProxyServiceScannerConfigurer 服务代理扫描注入类 使用 IProxyPrivoder获取服务
+
+            server端发布时需要加载sys.export.xml  client端注入代理时需要加载sys.proxy.xml
+            组合使用参见 cgpboss-engine-service
+
+
+    commons-scheduling
+          package
+            annotation 定义@Job注解 cron="执行表达式，支持配置文件"  group="执行组，概念见quartz group"
+            quartz  对@Job的quartz实现 支持分布式 需要配置quartz.properties 见官网配置
+
+          使用时加载sys.quartz.xml 需要调度的方法@Job(cron=xxx group=xxx)即可
+
+
+    commons-store
+          提供mybatis相关拦截器,多数据源有bug待测试尚未加入
+          通用实现的Service page方法 接受的PageParam-pageSize=0则查全部  <0则查总数  >0按每页查
+
+          使用方式需文件  jdbc.properties 连接参数,
+                        mybatis-config.xml mybatis配置参数,
+                        sys.datasource.xml 数据源独立配置,
+                        sys.store.xml 数据源结合Mybaits和AOP 事务配置
+
+
+
